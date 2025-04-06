@@ -1,1 +1,49 @@
+###### JAVASCRIPT LEARNING FROM NOVICE TO NINJA! ######
+>>>>> String Properties and Methods <<<<< 
+const name = 'Alexa';
+* length of string:
+    name.length; 
 
+* change to capital letter (uppercase)
+    name.toUpperCase();
+
+* change to small letter (lowercase)
+    name.toLowwerCase();
+
+* know which character is at a certain position: 
+    name.charAt(2);
+
+* know the position of a character in a string: 
+    name.indexOf('e');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
