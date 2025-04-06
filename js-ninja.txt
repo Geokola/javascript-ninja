@@ -42,6 +42,62 @@ const name = 'Alexa';
 
 
 >>>>> Template Literals <<<<<< 
+* template literals use the backtick character, to deliminate the string:
+    const greet = `Hello`;
+
+* this makes it possible to use both types of quote marks withing the string:
+const txt = `She said, "It's time to sleep!"`;
+
+* they also allow interpolation of Javascript code.
+* we can insert javascript expression inside a string:
+    const name = 'John';
+    `hello, ${name}!`;
+
+    const age = 20;
+    `I will be ${age + 1} next year.`;
+
+
+>>>>> Numbers <<<<< 
+* number can be integer or floating/decimal.
+* check if number is integer:
+    const num = 4;
+    Number.isInteger(num); // true 
+
+* to create an hexadecimal number:
+    - starts with 0x 
+
+* to create an octal number: 
+    - starts with 0o
+
+* to create a binary number:
+    - starts with 0b 
+
+* to write number in exponential notation(standard form):
+    const num = 2e3; //2000
+    const num2 = 2.5e-3; //0.0025 
+
+* to return a number in exponential notation string:
+    - 5..toExponential(); //'5e+0'
+    - 5 .toExponential(); //'5e+0'
+    - 5.0.toExponential(); //'5e+0'
+    - (5).toExponential(); //'5e+0'
+    - or assign the number to a constant:
+        const num = 5;
+        num.toExponential(); //'5e+0'
+
+* to round number to a fixed number of decimal places and return as a string:
+    const pi = 3.141592;
+    pi.toFixed(3); //'3.142'
+
+* to round number to significant figure precision and return as a string:
+    325678..toPrecision(2); //'3.3e+5'
+    2.459.toPrecision(2); //'2.5'
+
+    
+
+
+
+
 
 
 
