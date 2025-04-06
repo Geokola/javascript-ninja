@@ -15,6 +15,36 @@ const name = 'Alexa';
 
 * know the position of a character in a string: 
     name.indexOf('e');
+    - returns -1 is false 
+
+* know the last occurrence of a character or substring in a string:
+    name.lastIndexOf('a');
+
+* check if a string containes a certain character:
+    name.includes('a');
+    - returns a boolean  
+
+* check if a string starts with a certain character:
+    name.startsWith('a');
+    
+* check if a string ends with a certain character
+    name.endsWith('a');
+
+* concatenate/join two or more strings together:
+    'Hello'.concat(' ', 'World', '!');
+    - its better to use addition sign '+' to concatenate strings together
+
+* to remove whitespace from the beginning and end of a string: trim()
+    '   \t \n javascript ninja! \r'.trim();
+
+* to repeat a string the stated number of times:
+    'Hello'.repeat(3); 
+
+
+>>>>> Template Literals <<<<<< 
+
+
+
 
 
 
