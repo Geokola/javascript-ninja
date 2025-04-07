@@ -93,8 +93,145 @@ const txt = `She said, "It's time to sleep!"`;
     325678..toPrecision(2); //'3.3e+5'
     2.459.toPrecision(2); //'2.5'
 
-    
+* to check is a value is a number:
+    Number.isFinite(42); // true 
 
+
+>>>>> Type Coercion <<<<< 
+* Type coercion happens when the operands of an operator are of different types.
+* Javascript will try to convert one operand to an equivalent value of the other operand's type.
+    - '2' * 8; //16
+    - '2' + 8; //'28'
+
+
+>>>>> Converting Strings to Numbers 
+    1. const num = Number('23');
+    2. const num = +'23'; 
+    3. const num = '23' * 1;
+
+>>>>> Converting Numbers to Strings
+    1. const str = String(23);
+    2. const str = 23..toString();
+    3. const str = 23 + ''; 
+
+>>>>> Parsing Numbers 
+* use parseInt()
+* this can be used to convert a string representation of numerical value to a number.
+* you can specify the base of the number you are trying to convert:
+    - convert from binary to base 10:
+        parseInt('1010', 2); //10 
+    - get only the number from a mixture of string an numbers 
+        const address = 'No 206a, ilkeston road';
+        const number = parseInt(address,10); //206
+    - when used with a decimal number, it returns only the integer part:
+        paseInt('2.45', 10); //2 
+>>>>> Parsing Float:
+    parseFloat('2.97', 10); //2.97 
+
+
+>>>>> Undefined 
+* this is the value given to variables that have not been assigned a value.
+* it always returns NaN 
+
+>>>>> Null 
+* Null means 'no value'.
+* it is like a placeholder 
+* it behaves like zero 
+    const num = 10 + null; // 10
+
+>>>>> Booleans 
+* has two values: true and false 
+* most values are true 
+* the 9 false values in javascript are:
+    1. ''
+    2. ""
+    3. 0
+    4. -0
+    5. NaN 
+    6. false 
+    7. null 
+    8. undefined 
+    9. `` 
+
+    * examples:
+    - Boolean('hello'); //true 
+    - Boolean(25); //true 
+    - Boolean(0); //false 
+    - Boolean(null); //false 
+
+
+>>>>> Logical Operators <<<<< 
+1. ! (Logical NOT) 
+    * this is signgle negation
+    * this convert the value to a boolean and return its opposite:
+    !true; //false 
+    !0; //true 
+
+2. !! (Double Negation) 
+    * it is possible to negate a negation by using !! 
+    * this is equivalent to using 'Boolean()' 
+    * examples: 
+        !!''; //false 
+        !!'hello'; //true 
+        !!NaN; //false 
+
+3. && (Logical AND) 
+    * this works on two or more values 
+    * it evaluates to true ONLY if all the operands are truthy.
+    * returns the last value if all of them are true.
+    * returns the first falsy value if at least one of them is false.
+    * examples:
+        'shoes' && 18; //18 
+    'shoes' && 0; //0
+
+4. || (Logical OR) 
+    * this works on two or more values
+    * it evaluates to true if any of the operands are truthy.
+    * returns the first truthy value if any of them are true.
+    * returns the last falsy value if all of them are false.
+    * examples:
+        'shoes' || 0; //'shoes'
+        NaN || undefined; //undefined
+
+
+>>>>>> Comparison <<<<<<< 
+1. Equality =:
+    * this is used to assign value to variable.
+    const answer = 5;
+
+2. Soft Equality ==: 
+    * this is used to check for equality
+    * returns boolean 
+    * doesnt take into account the data type 
+    answer == 5; //true 
+    answer == '5'; //true 
+
+3. Hard Equality ===:
+    * checks for equality 
+    * returns boolean 
+    * considers the data type.
+    * only strange result is: NaN === NaN; //false 
+    '5' === 5; //false 
+
+
+>>>>> Inequality <<<<<
+1. Soft Not Equal-to !=:
+    16 != '16'; //false 
+
+2. Hard Not Equal-to !==:
+    16 != '16'; //true 
+
+3. Greater than >:
+    5 > 4; //true 
+
+4. Less than <:
+    5 < 4; //false 
+
+5. Greater than or equal to >=:
+    5 >= 4; //true 
+
+6. Less than or equal to <=:
+    5 <= 4; //false
 
 
 
