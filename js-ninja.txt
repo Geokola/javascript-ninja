@@ -234,11 +234,189 @@ const txt = `She said, "It's time to sleep!"`;
     5 <= 4; //false
 
 
+###### STORING LIST OF VALUES (ARRAYS, SETS AND MAPS)
+>>>>> ARRAY <<<<< 
+* is an ordered list of values 
+* arrays are not primitive values but a special built-in object.
+     const myArr = [];
+     const myArr = new Array(); 
+
+    const mixedArray = [1, null, [], 'two', true];
+
+* remove an item from the array:
+    * example: remove the 4th element from the array:
+    delete mixedArray[3];
+    * this will keep the position unchanged and replaced the deleted value with undefined
+
+
+>>> Array Destructuring:
+* this involves taking values out of an array and presenting them as individual values: 
+    
+    const [name, age] = ['kola', 22];
+    name; //kola 
+    age; //22 
+
+>>>> Array Properties and Methods:
+const avengers = ['Captain America', 'Iron Man', 'Thor', 'Hulk'];
+1. Find the length:
+    avengers.length; //4 
+
+    * the length property is mutable (changeable)
+    * if you increase the length, the extra slots will be filled with 'undefined' as values.
+    * if you decrease the length, the extra elements will be removed completely.
+
+2. Get the last element of the array:
+    avengers[avengers.length - 1]; //Hulk 
+
+3. Remove the last element from an array pop():
+    avengers.pop(); //Hulk
+
+4. Remove the first element from an array shift():
+    avengers.shift(); //Captain America 
+
+5. Append a new element to the end of the array push():
+    avengers.push('Nazareth Girlie');
+
+6. Append a new element to the beginning of the array unshift(); 
+
+7. Merging Arrays concat(): 
+    * concat() method can be used to merge an array with one or more arrays: 
+    avengers.concat(['Hawkeys', 'Black Widow']);
+
+8. Merging Arrays Spread Operator ...:
+    avengers = [...avengers..., ['Hawkeys', 'Black Widow']];
+
+9. Turn an array into a string join():
+    * the separator is specified as the parameter 
+    * the default separator is comma (,) 
+    avengers.join();
+    // 'Captain America, Iron Man, Thor, Hulk'
+
+    avengers.join(' & ');
+    // 'Captain America & Iron Man & Thor & Hulk' 
+
+10. Slice an array slice(param1, param2):
+    - this is used to create a subarray 
+    - takes two parameters: 
+        - param1 = the start position 
+        - param2 = the number of items to slice 
+
+    const arr = ['one', 'two', 'three', 'four', 'five'];
+    arr[1,2];
+    // ['two', 'three']
+
+11. Remove item from and array and replace it with a new item splice(param1, param2, param3):
+    - takes three parameters:
+        - param1 = the start position
+        - param2 = the number of items to remove 
+        - param3 = the replacement 
+    - if param3 is set to 0, no items will be removed.
+
+    arr[4, 1, 'newFive'];
+    // this has replaed 'five' with 'newFive'
+
+12. Reverse an array reverse():
+    arr.reverse();
+
+13. Sort an array sort():
+    - this sorts both string and number arrays alphabetically.
+    arr.sort();
+
+14. Find the index of an item in an array indexOf(item):
+    - returns the index of the item if found 
+    - returns -1 if not found 
+    arr.indexOf('two');
+    //1
+
+15. Check if an item is in an array includes(item):
+    - returns a boolean 
+    arr.includes('two');
+    //true 
+
+16. Multidimensional array:
+    * this is haveing an array inside another array 
+    const coordinates = [['one, 'two'], ['three, 'four'], ['five','six']];
+
+    coordinates[0,1]; //'two' // the second value of the first array 
+    coordinates[2,0]; //'five' // the first value of thrid array 
+
+17. Nesting arrays to create a multidimentional array: 
+    const summer = ['jun', 'jul', 'aug'];
+    const winter = ['dec', 'jan', 'feb'];
+    const nexted = [summer, winter];
+    // [['jun', 'jul', 'aug'], ['dec', 'jan', 'feb']]
+
+18. Flatening multidimentional array to just one level array: 
+    - make use of spread operator 
+    const flat = [...summer, ...winter];
+    //['jun', 'jul', 'aug', 'dec', 'jan', 'feb']
+
+
+>>>>>> Set <<<<<< 
+* this is used to collect distinct unique data 
+* any repeated character is ignored
+* set do not have index notation 
+* creating a set 
+    const list = new Set();
+
+* add item to set 
+    list.add('one');
+
+* add multiple items to set:
+    list.add('two').add('three');
+
+* another way of adding multiple items to set:
+    const num = new Set([1, 4, 9, 16]);
+
+* converting a string into each character 
+    const separated = new Set('hello');
+    //{'h', 'e', 'l', 'o'}
+
+* to add separate words, use add() method repeatedly: 
+    const myText = new Set().add('hello').add('world');
+
+* get the number of values in a set using size():
+    myText.size(); //2 
+
+* check if an item is in a set using has(item):
+    - returns boolean 
+    myText.has('hello');
+    //true
+
+* remove an item from a set using delete(item):
+    myText.delete('world');
+
+* remove all items from a set using clear():
+    myText.clear();
+
+
+>>>>> Convertion Set and Array <<<<<< 
+* converting a set to an array using spread operator 
+    const shoppingSet = new Set().add('Apple').add('Banana').add('Mango'); 
+    const shoppingArray = [...shoppingSet];
+    
+* another method to convert a set to array using Array.from():
+    const shoppingArray = Array.from(shoppingSet);
+
+* create a copy array without duplicate:
+    const duplicateArray = ['one', 'two', 'one', 'three'];
+    const uniqueArray = [...new Set(duplicateArray)];
+    //['one', 'two', 'three']
+
+
+>>>>> Map <<<<< 
 
 
 
 
 
+
+
+
+
+
+
+    
 
 
 
