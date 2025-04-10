@@ -405,9 +405,68 @@ const avengers = ['Captain America', 'Iron Man', 'Thor', 'Hulk'];
 
 
 >>>>> Map <<<<< 
+* a map is like a dictionary which has keys and  values. 
+1. Create a map:
+    const romanNum =  new Map();
+
+2. Adding entries to maps using set();
+    romanNum.set(1, 'I');
+    // Map{1=>'I'}
+
+2. Add multiple items using repeated set():
+    romanNum.set(2,'II').set(3,'III').set(4,'IV');
+
+3. Create multiple values using a nested array:
+    const heroes = new Map([['Clark Kent', 'Superman'], 'Bruce Wayne', 'Batman']);
+    Map{'Clark Kent'=>'Superman', 'Bruce Wayne'=>'Batman'}
+
+>>>> Map Methods: 
+1. Get value using a key using get(): 
+    romanNum.get(4);
+    //'IV'
+
+2. Check if a key is in a map using has():
+* returns boolean 
+    romanNum.has(5);
+    // false 
+
+3. Get number of key values pair in a map using size:
+    romanNum.size;
+    // 4
+
+4. Remove a key and value pair from a map using delete(key):
+    * this returns a boolean 
+    romanNum.delete('Clark Kent');
+    //true 
+
+5. Remove all key and value pairs from a map: 
+    romanNum.clear();
+
+>>>>> Converting Maps to Arrays 
+* Convert to a nested array of key-value pairs using the spread operator: 
+    const arrayFromMap = [...romanNum];
+    // [[1, 'I'], [2, 'II'], [3, 'III'], [4, 'IV']];
+
+* Alternatively, use the Array.from() method:
+    const arrayFromMap = Array.from(romanNum);
+    // [[1, 'I'], [2, 'II'], [3, 'III'], [4, 'IV']];
 
 
+>>>>> Logical Operator:
+* is used to set conditions for different block of codes
+1. if Statements:
+    if (condition) {
+        // code to run if condition is true 
+    }
 
+2. else Statements:
+* is used to add an alternative block of code to run if the condition is false.
+    if (condition) {
+        // run if condition is true
+    }
+    else{
+        // run if condition is false 
+    }
 
 
 
