@@ -462,25 +462,180 @@ const avengers = ['Captain America', 'Iron Man', 'Thor', 'Hulk'];
 2. else Statements:
 * is used to add an alternative block of code to run if the condition is false.
     if (condition) {
-        // run if condition is true
+        // code to run if condition is true
     }
     else{
-        // run if condition is false 
+        // code to run if condition is false 
     }
 
+3. Ternary Operator:
+* is a shorthand way of writing if ... else statement.
+    condition ? (//code to run if condition is true) : (//code to run if condition is false);
+
+    const num = 5;
+    n % 2 === 0 ? console.log(`${num} is an even number`) : console.log(`${num} is an odd number`);
 
 
+3. else if Statements:
+* can be used to test for more conditions:
+    if(conditon_1){
+        //run code 
+    }
+    else if(condition_2){
+        //run code 
+    }
+    else if(condition_3){
+        //run code 
+    }
+    else{
+        //run code if non of the conditions were true 
+    }
+
+    number = 4;
+    if (number == 4){
+        console.log('You rolled a four');
+    }
+    else if (number == 5){
+        console.log('You rolled a five');
+    }
+    else if (number === 6){
+        console.log('You rolled a six');
+    }
+    else{
+        console.log('You rolled a number less than four');
+    }
+
+4. Switch Statements 
+* This is much more better to use when we have multiple condition to test, rather than using eht else if statements:
+    switch (number){
+        case 4:
+            console.log('You rolled a four');
+            break;
+        case 5:
+            console.log('You rolled a five');
+            break;
+        case 6:
+            console.log('You rolled a six');
+            break;
+        default:
+            console.log('You rolled a number less than four');
+            break;
+    }
+
+* it is important to finish a case block with a break keyword 
 
 
+>>>>> Loops
+* Loops will repeat a piece of code over and over again based on certain conditions.
+
+1. while Loops 
+    while (condition){
+        // do something 
+    }
+    Example: count down from 10 and keep repeating same code until the count is 0:
+    let count = 10
+    while (count > 0){
+        console.log(`The current count is ${count}`);
+        count = count -1; //count--;
+
+    }
+    * be careful not to run into indefinate loop!
+
+2. do ... while Loops:
+* this is similar to while loop 
+* only difference is that the condition comes after the 'do' block 
+* this means that no matter the outcome of the condition, the code will run at least once.
+    do {
+        // code to run 
+    }
+    while (condition);
+
+    Example:
+    let number = 10;
+    do {
+        console.log(`The current count is ${number}`);
+        number--;
+    } while (number > 0);
+
+3. for Loops 
+* this is the most common type of loop 
+    for (initialization ; condition; iteration){
+        // do something 
+    }
+
+    for (let number = 10; number > 0; number--){
+        console.log(`The current count is ${number}`);
+    }
+
+4. Nested for Loops:
+* you can place a loop inside another loop to create a nested loop.
+* the inner loop will run all the way through before the next step of the outer loop occurs.
+* Example: produce a 12 by 12 multiplication table
+    for(let i = 1; i < 13; i++){
+    for(let j = 1; j < 13; j++){
+        let result = i * j;
+        console.log(`${i} multiplied by ${j} is ${result}`);
+    }
+}
 
 
+>>>>> Looping over Arrays:
+1. using for loop 
+    const avengers = ['Black Widow', 'Captain America', 'Hawkeye'];
+    const max = avengers.length;
+    for (let i = 0, i < max; i++){
+        console.log(avengers[i]);
+    }
 
-    
+    or 
+    for (let i = 0; count = avengers.length; i < count; i++){
+        console.log(avengers[i]);
+    }
 
+* using the ES6 for ... of loop:
+    for (const val of avengers){
+        console.log(avengers[i]);
+    }
+    * the variable need to be declared using const 
 
+* looping over Sets:
+    const letters = new Set('hello');
+    for (const chr of letters){
+        console.log(chr);
+    } 
+    //h 
+    //e 
+    //l 
+    //l 
+    //o 
 
+* looping over Maps:
+    * every Map object has both keys() and values() method 
+    const romanNum = new Map();
+    romanNum.set(1,'I').set(2,'II').set(3,'III').set(4,'IV');
 
+    * to loop through the keys:
+    for(const key of romanNum.keys()){
+        console.log(key);
+    }
+    //1
+    //2
+    //3
+    //4
 
+    * to loop through the values:
+    for (const val of romanNum.values()){
+        console.log(val);
+    }
+    //I
+    //II 
+    //III 
+    //IV 
+
+    * to access both the keys and values in the loop:
+    for (const [key, val] of romanNum){
+        console.log(`${key} in Roman Numerals is ${val}`)
+    }
 
 
 
