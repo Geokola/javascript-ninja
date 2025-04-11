@@ -638,9 +638,74 @@ const avengers = ['Captain America', 'Iron Man', 'Thor', 'Hulk'];
     }
 
 
+>>>>>> Functions <<<<<<< 
+1. A named funtion:
+    function hello(){
+        console.log('hello dear');
+    }
+
+2. Function expressions:
+    * this assigned an anonymous function to a declared variable:
+    * take note of the ending semi-colon 
+    const goodbye = function(){
+        console.log('Goodbye fellas');
+    };
+
+3. Get the function name:
+    * every function has a name
+    * this is very useful when debugging a code 
+    hello.name;
+    // 'hello'
+    goodbye.name;
+    // 'goodbye'
+
+4. Using Function() Constructors:
+    * the body of the function is entered as a string:
+    const hi = new Function('consile.log("Hi World");');
 
 
+5. Invoking a Function:
+    * this means calling a function to run the code inside its body.
+    * simply write the function name, followed by parentheses.
+    hello();
+    // 'Hello World'
 
+6. Passing a function to another variable:
+    * do this without the parentheses 
+    const newGreeting = greeting;
+
+7. Return Values: 
+* all function returns a value 
+* make use of the return keyword 
+* a function that doesnt explicitly return anything will return undefined by default 
+
+    function howdy(){
+        return 'Howdy World';
+    }
+
+    const msg = howdy();
+    // 'Howdy World'
+
+8. Parameters and Arguments:
+* Parameters and Arguments are values provided for the function as an input.
+* Parameters are set when the function is being defined.
+* Arguments are provided when the function is being invoked.
+
+    Example: Define a function that takes an input and return its square
+
+    function square(x){
+        return x*x;
+    }
+
+    square(6);
+    // 36
+
+* if a function is not provided all the needed arguments when invoking it, the parameters will be given a value of undefined 
+* if too many arguments are provided when a function is invoked, the extra arguments will be ignored.
+
+
+9. Variable Numbers of Arguments:
+* this is when the number of needed arguments is not certain.
 
 
 
