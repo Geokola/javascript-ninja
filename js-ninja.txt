@@ -706,8 +706,102 @@ const avengers = ['Captain America', 'Iron Man', 'Thor', 'Hulk'];
 
 9. Variable Numbers of Arguments:
 * this is when the number of needed arguments is not certain.
+* we will use the 'rest operator'
+* this creates an array of arguments with are avaliable inside the body of the function 
+* place three dots (...) in front of the last parameter in a function declaratino
+* examples:
+    function myRest(...args){
+        return args;
+    }
+
+* the 'args' above is an array and we iterate it using for-of loop 
+    function myRest(...agrs){
+        for(arg of args){
+            console.log(arg);
+        }
+    }
+
+    myRest(2,4, 'three', true);
+    // 2
+    // 4
+    // 'three'
+    // true 
+
+* examples of an advance mean calculation:
+    function getMean(...args){
+        let total = 0;
+        for(arg of args){
+            total += arg;
+        }
+        const arrLength = args.length;
+        const result = total / arrLength;
+        return result;
+    }
 
 
+10. Using Default Parameters:
+* these values will be used by the funtion if no arguments are provided when it is invoked. 
+
+    function hello(name='World'){
+        console.log(`Hello ${name}!`);
+    }
+
+    hello();
+    // 'Hello World'
+    hello('England');
+    // 'Hello England' 
+
+* default parameters should always come after non-default parameters
+    function discount(price, amount = 10){
+        return price * (100 - amount) / 100;
+    }
+    discount(20);
+    // 18 
+
+11. Arrow Functions:
+* this is just another fancy and more clinical way of writing function by using arrow symbol:
+* if no parameters required, a pair of empty parentheses must go before the arrow.
+* single parameters dont need putting into parentheses.
+* the body of the function doesnt need placing inside a block, if it's only one line.
+* doesnt need the 'return' keyword
+* they don't bind their own value of 'this' to the function.
+* examples:
+
+    const square = x => x*x;
+    square(3);
+    // 9 
+
+    const add = (x,y) => x + y;
+    add(5,9);
+    // 14
+
+    const hello = () => 'Hello World';
+    hello();
+    // 'Hello World' 
+
+    const tax = (salary) => {
+        const taxable = salary - 8000;
+        const lowerRate = 0.25 * taxable;
+        taxable = taxable - 20000;
+        const higherRate = 0.4 * taxale;
+        return lowerRate + higherRate;
+    }
+
+12. Function Hoisting:
+* In JavaScript, it is possible to invoke a function before declaring it.
+* Every function, defined using the 'function' keyword, are automatically hoisted.
+
+    hoist();
+
+    function hoist(){
+        console.log('Hoist Me!');
+    }
+
+* this can makes you to place all your functions at the end of the program.
+
+13. Callbacks 
+    * a function that is passed as an argument to another is known as a callback. 
+    
 
 
 
