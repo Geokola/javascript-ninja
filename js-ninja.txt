@@ -800,7 +800,50 @@ const avengers = ['Captain America', 'Iron Man', 'Thor', 'Hulk'];
 * this can makes you to place all your functions at the end of the program.
 
 13. Callbacks 
-    * a function that is passed as an argument to another is known as a callback. 
+    * a function that is passed as an argument to another function is known as a callback. 
+    * this allows a function to call another function 
+    * example: two functions:
+        a. perform sum of two numbers 
+        b. display the result 
+    
+    function myDisplayer(resParam){
+        console.log(resParam);
+    }
+
+    function myCalc(n1, n2, myCallback){
+        let result = n1 + n2;
+        myCallback(result);
+    }
+
+    myCalculator(4, 7, myDisplayer);
+    // 11
+
+    * when you pass a function as an argument, do not use parentheses.
+        - i.e. myCalculator(4, 7, myDisplayer());
+
+    * another example to remove negative numbers from an array:
+    const myNumber = [-2, 5, 7, -3, 0, -6];
+
+    function filterNum(x){
+        if (x >= 0){
+            return x;
+        }
+    }
+
+    function newArray(numArray, callback){
+        let arr = [];
+        for (const i of numArray){
+            if(callback(i)){
+                arr.push(i);
+            }
+        }
+        return arr;
+    }
+
+    const myNewNum = newArray(myNumber, filterNum);
+
+    console.log(myNewNum);
+    // [5, 7]
     
 
 
